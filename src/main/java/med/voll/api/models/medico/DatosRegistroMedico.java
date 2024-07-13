@@ -2,14 +2,18 @@ package med.voll.api.models.medico;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import med.voll.api.models.direccion.DatosRegistroDireccion;
 
 public record DatosRegistroMedico(
-    @JsonAlias("nombre")String nombre,
-    @JsonAlias("email") String email,
-    @JsonAlias("documentoId") String documentoId,
-    @JsonAlias("especialidad") Especialidad especialidad,
-    @JsonAlias("direccion") DatosRegistroDireccion datosDireccion
-) {
+        @NotBlank @JsonAlias("nombre") String nombre,
+        @NotBlank @Email @JsonAlias("email") String email,
+        @NotBlank @Pattern(regexp = "\\d{4,6}") @JsonAlias("documentoId") String documentoId,
+        @NotNull @JsonAlias("especialidad") Especialidad especialidad,
+        @NotNull @Valid @JsonAlias("direccion") DatosRegistroDireccion datosDireccion) {
 
 }
