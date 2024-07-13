@@ -12,6 +12,7 @@ import med.voll.api.models.direccion.DatosRegistroDireccion;
 public record DatosRegistroMedico(
         @NotBlank @JsonAlias("nombre") String nombre,
         @NotBlank @Email @JsonAlias("email") String email,
+        @NotBlank @JsonAlias("telefono") String telefono,
         @NotBlank @Pattern(regexp = "\\d{4,6}") @JsonAlias("documentoId") String documentoId,
         @NotNull @JsonAlias("especialidad") Especialidad especialidad,
         @NotNull @Valid @JsonAlias("direccion") DatosRegistroDireccion datosDireccion) {
