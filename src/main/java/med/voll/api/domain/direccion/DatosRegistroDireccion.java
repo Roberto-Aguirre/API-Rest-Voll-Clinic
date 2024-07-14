@@ -1,4 +1,4 @@
-package med.voll.api.models.direccion;
+package med.voll.api.domain.direccion;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 

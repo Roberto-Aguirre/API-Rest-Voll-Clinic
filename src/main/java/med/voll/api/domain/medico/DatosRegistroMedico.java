@@ -1,4 +1,4 @@
-package med.voll.api.models.medico;
+package med.voll.api.domain.medico;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 
@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import med.voll.api.models.direccion.DatosRegistroDireccion;
+import med.voll.api.domain.direccion.DatosRegistroDireccion;
 
 public record DatosRegistroMedico(
         @NotBlank @JsonAlias("nombre") String nombre,
