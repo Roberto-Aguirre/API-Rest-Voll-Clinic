@@ -1,4 +1,5 @@
 package med.voll.api.models.medico;
+
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -33,14 +34,26 @@ public class Medico {
     private Especialidad especialidad;
     @Embedded
     private Direccion datosDireccion;
-    
-    
+
     public Medico(DatosRegistroMedico datosRegistroMedico) {
-    this.nombre = datosRegistroMedico.nombre();
-    this.email = datosRegistroMedico.email();
-    this.telefono = datosRegistroMedico.telefono();
-    this.documento = datosRegistroMedico.documentoId();
-    this.especialidad = datosRegistroMedico.especialidad();
-    this.datosDireccion = new Direccion(datosRegistroMedico.datosDireccion());
+        this.nombre = datosRegistroMedico.nombre();
+        this.email = datosRegistroMedico.email();
+        this.telefono = datosRegistroMedico.telefono();
+        this.documento = datosRegistroMedico.documentoId();
+        this.especialidad = datosRegistroMedico.especialidad();
+        this.datosDireccion = new Direccion(datosRegistroMedico.datosDireccion());
+    }
+
+    public void actualizarDatos(DatosActualizarMedico datosActualizarMedico) {
+        if (datosActualizarMedico.nombre() != null) {
+            this.nombre = datosActualizarMedico.nombre();
+        }
+        if (datosActualizarMedico.documento() != null) {
+            this.documento = datosActualizarMedico.documento();
+        }
+        if (datosActualizarMedico.direccion() != null) {
+            this.datosDireccion = datosDireccion.actualizarDatos(datosActualizarMedico.direccion());
+        }
+
     }
 }
