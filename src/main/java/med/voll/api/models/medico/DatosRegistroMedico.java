@@ -13,6 +13,7 @@ public record DatosRegistroMedico(
         @NotBlank @JsonAlias("nombre") String nombre,
         @NotBlank @Email @JsonAlias("email") String email,
         @NotBlank @JsonAlias("telefono") String telefono,
+        @NotNull @JsonAlias("activo") Boolean activo,
         @NotBlank @Pattern(regexp = "\\d{4,6}") @JsonAlias("documentoId") String documentoId,
         @NotNull @JsonAlias("especialidad") Especialidad especialidad,
         @NotNull @Valid @JsonAlias("direccion") DatosRegistroDireccion datosDireccion) {
