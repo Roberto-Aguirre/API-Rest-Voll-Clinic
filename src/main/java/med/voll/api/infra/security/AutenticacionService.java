@@ -12,7 +12,6 @@ import med.voll.api.domain.usuarios.UsuarioRepositorio;
 public class AutenticacionService implements UserDetailsService{
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return usuarioRepositorio.findByLogin(username);
