@@ -2,7 +2,6 @@ package med.voll.api.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.auth0.jwt.JWT;
 
 import jakarta.validation.Valid;
 import med.voll.api.domain.usuarios.DatosAutenticacionUsuario;
