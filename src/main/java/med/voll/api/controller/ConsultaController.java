@@ -15,15 +15,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @RestController
-@RequestMapping("/pacientes")
+@RequestMapping("/consultas")
 public class ConsultaController {
     @Autowired
     private ConsultaRepository consultaRepository;
-    @PostMapping("path")
+    @PostMapping
     @Transactional
     public ResponseEntity agendar(@RequestBody @Valid DatosAgendarConsulta datos){
-        System.out.println(datos);
-        return ResponseEntity.ok(new DatosDetalleConsulta(datos));
+        var datosConsulta = new DatosDetalleConsulta(datos);
+        System.out.println(datosConsulta);
+        return ResponseEntity.ok(datosConsulta);
     }
 
 
