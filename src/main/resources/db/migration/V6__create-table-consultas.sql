@@ -2,7 +2,7 @@ create table consultas(
  id BIGINT NOT NULL AUTO_INCREMENT,
  medico_id BIGINT NOT NULL,
  paciente_id BIGINT NOT NULL,
- data datetime NOT NULL,
+ date datetime NOT NULL,
 
  PRIMARY KEY(id),
 

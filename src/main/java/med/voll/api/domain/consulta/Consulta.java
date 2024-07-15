@@ -22,6 +22,8 @@ import med.voll.api.domain.paciente.Paciente;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Consulta {
+
+ 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -33,4 +35,11 @@ public class Consulta {
     private Paciente paciente;
 
     private LocalDateTime date;
+
+    public Consulta(DatosAgendarConsulta datosAgendarConsulta, Paciente paciente, Medico medico) {
+      this.medico = medico;
+      this.paciente = paciente;
+      this.date = datosAgendarConsulta.fecha();
+    }
+
 }
